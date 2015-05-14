@@ -32,6 +32,13 @@ var client_id = process.env.client_id;
 var app_url = process.env.app_url;
 var sflogin_url = process.env.sflogin_url;
 
+//to enable cors
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 
 app.get('/', function (req, res) {
     res.render("index", { client_id: client_id, app_url: app_url, sflogin_url: sflogin_url});
@@ -41,7 +48,7 @@ app.get('/index.html', function (req, res) {
 });
 
 
-app.all('/proxy/?*', function (req, res) {
+app.all('/proxy/?*', function (req, res, next) {
     log(req);
     var body = req.body;
     var contentType = "application/x-www-form-urlencoded";
@@ -66,7 +73,7 @@ app.all('/proxy/?*', function (req, res) {
             "Authorization": req.headers["authorization"] || req.headers['x-authorization'],
             "X-User-Agent": req.headers["x-user-agent"]},
         body: body
-    }).setHeader('Access-Control-Allow-Origin','*').pipe(res);
+    }).pipe(res);
 });
 
 function log(req) {
