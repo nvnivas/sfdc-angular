@@ -100,7 +100,7 @@ function getSFConfig() {
             throw 'Environment variable client_id and/or app_url is missing. Please set them before you start the app';
         }
         return {
-            sfLoginURL: 'https://login.salesforce.com/',
+            sfLoginURL: configFromEnv.sfLogin_url,
             consumerKey: configFromEnv.client_id,
             oAuthCallbackURL: removeTrailingSlash(configFromEnv.app_url) + '/#/callback',
             proxyUrl: removeTrailingSlash(configFromEnv.app_url) + '/proxy/'
