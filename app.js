@@ -30,13 +30,14 @@ app.configure('development', function () {
 
 var client_id = process.env.client_id;
 var app_url = process.env.app_url;
+var sflogin_url = process.env.sflogin_url;
 
 
 app.get('/', function (req, res) {
-    res.render("index", { client_id: client_id, app_url: app_url,sflogin_url: sflogin_url});
+    res.render("index", { client_id: client_id, app_url: app_url, sflogin_url: sflogin_url});
 });
 app.get('/index.html', function (req, res) {
-    res.render("index", { client_id: client_id, app_url: app_url,sflogin_url: sflogin_url});
+    res.render("index", { client_id: client_id, app_url: app_url, sflogin_url: sflogin_url});
 });
 
 
