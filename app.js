@@ -66,7 +66,7 @@ app.all('/proxy/?*', function (req, res) {
             "Authorization": req.headers["authorization"] || req.headers['x-authorization'],
             "X-User-Agent": req.headers["x-user-agent"]},
         body: body
-    }).pipe(res);
+    }).pipe(res.setHeader('Access-Control-Allow-Origin','*'));
 });
 
 function log(req) {
