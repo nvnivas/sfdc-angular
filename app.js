@@ -51,7 +51,7 @@ app.all('/proxy/?*', function (req, res) {
             body = getAsUriParameters(body);
         } else {//for everything else, it's json
             contentType = "application/json";
-            body = JSON.stringify(body);
+            body = JSON.stringify(body); 
         }
     }
 
