@@ -33,10 +33,10 @@ var app_url = process.env.app_url;
 
 
 app.get('/', function (req, res) {
-    res.render("index", { client_id: client_id, app_url: app_url});
+    res.render("index", { client_id: client_id, app_url: app_url,sflogin_url: sflogin_url});
 });
 app.get('/index.html', function (req, res) {
-    res.render("index", { client_id: client_id, app_url: app_url});
+    res.render("index", { client_id: client_id, app_url: app_url,sflogin_url: sflogin_url});
 });
 
 
