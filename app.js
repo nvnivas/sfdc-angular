@@ -76,6 +76,7 @@ app.all('/proxy/?*', function (req, res, next) {
     }).pipe(res);
     
     res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, salesforceproxy-endpoint");
 });
 
 function log(req) {
