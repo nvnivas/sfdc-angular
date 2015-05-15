@@ -29,7 +29,7 @@ function HomeCtrl($scope, AngularForce, $location, $route) {
         if(!isAuthenticated) {//MobileWeb
             return $location.path('/login');
         } else {//Cordova
-            return $location.path('/home/');
+            return $location.path('/home');
         }
     }
 
@@ -38,7 +38,7 @@ function HomeCtrl($scope, AngularForce, $location, $route) {
         $location.path('/login');
     } else if (AngularForce.refreshToken) { //If web, try to relogin using refresh-token
         AngularForce.login(function () {
-            $location.path('/home/');
+            $location.path('/home');
             $scope.$apply();//Required coz sfdc uses jquery.ajax
         });
     } else {
@@ -49,14 +49,14 @@ function HomeCtrl($scope, AngularForce, $location, $route) {
 function LoginCtrl($scope, AngularForce, $location) {
     //Usually happens in Cordova
     if (AngularForce.authenticated()) {
-        return $location.path('/contacts/');
+        return $location.path('/home/');
     }
 
     $scope.login = function () {
         //If in visualforce, 'login' = initialize entity framework
         if (AngularForce.inVisualforce) {
            AngularForce.login(function() {
-            $location.path('/contacts/');
+            $location.path('/home/');
            });     
         } else {
             AngularForce.login();           
