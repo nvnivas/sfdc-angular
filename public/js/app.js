@@ -29,7 +29,7 @@ function HomeCtrl($scope, AngularForce, $location, $route) {
         if(!isAuthenticated) {//MobileWeb
             return $location.path('/login');
         } else {//Cordova
-            return $location.path('/contacts/');
+            return $location.path('/home/');
         }
     }
 
@@ -38,7 +38,7 @@ function HomeCtrl($scope, AngularForce, $location, $route) {
         $location.path('/login');
     } else if (AngularForce.refreshToken) { //If web, try to relogin using refresh-token
         AngularForce.login(function () {
-            $location.path('/contacts/');
+            $location.path('/home/');
             $scope.$apply();//Required coz sfdc uses jquery.ajax
         });
     } else {
