@@ -54,15 +54,15 @@ function initApp(options, forcetkClient) {
  */
 app.config(function ($routeProvider) {
     $routeProvider.
-        when('/', {controller: HomeCtrl, templateUrl: 'partials/home.html'}).
-        when('/login', {controller: LoginCtrl, templateUrl: 'partials/login.html'}).
-        when('/logout', {controller: LoginCtrl, templateUrl: 'partials/logout.html'}).
-        when('/callback', {controller: CallbackCtrl, templateUrl: 'partials/callback.html'}).
-        when('/contacts', {controller: ContactListCtrl, templateUrl: 'partials/contact/list.html'}).
-        when('/view/:contactId', {controller: ContactViewCtrl, templateUrl: 'partials/contact/view.html'}).
-        when('/edit/:contactId', {controller: ContactDetailCtrl, templateUrl: 'partials/contact/edit.html'}).
-        when('/new', {controller: ContactDetailCtrl, templateUrl: 'partials/contact/edit.html'}).
-        when('/home', {controller: HomeCtrl, templateUrl: 'partials/home.html'}).
+        when('/', {controller: HomeCtrl, templateUrl: '/partials/home.html'}).
+        when('/login', {controller: LoginCtrl, templateUrl: '/partials/login.html'}).
+        when('/logout', {controller: LoginCtrl, templateUrl: '/partials/logout.html'}).
+        when('/callback', {controller: CallbackCtrl, templateUrl: '/partials/callback.html'}).
+        when('/contacts', {controller: ContactListCtrl, templateUrl: '/partials/contact/list.html'}).
+        when('/view/:contactId', {controller: ContactViewCtrl, templateUrl: '/partials/contact/view.html'}).
+        when('/edit/:contactId', {controller: ContactDetailCtrl, templateUrl: '/partials/contact/edit.html'}).
+        when('/new', {controller: ContactDetailCtrl, templateUrl: '/partials/contact/edit.html'}).
+        when('/home', {controller: HomeCtrl, templateUrl: '/partials/home.html'}).
         otherwise({redirectTo: '/'});
 });
 
