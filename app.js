@@ -36,7 +36,7 @@ var sflogin_url = process.env.sflogin_url;
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept,salesforceproxy-endpoint");
+  res.header("Access-Control-Allow-Headers", "*");
   next();
 });
 
@@ -78,7 +78,7 @@ app.all('/proxy/?*', function (req, res, next) {
     
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Methods", "*");
-    res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, salesforceproxy-endpoint");
+    res.setHeader("Access-Control-Allow-Headers", "*");
 });
 
 function log(req) {
