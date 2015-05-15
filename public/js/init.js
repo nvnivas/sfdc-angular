@@ -62,6 +62,7 @@ app.config(function ($routeProvider) {
         when('/view/:contactId', {controller: ContactViewCtrl, templateUrl: 'partials/contact/view.html'}).
         when('/edit/:contactId', {controller: ContactDetailCtrl, templateUrl: 'partials/contact/edit.html'}).
         when('/new', {controller: ContactDetailCtrl, templateUrl: 'partials/contact/edit.html'}).
+        when('/home', {controller: HomeCtrl, templateUrl: 'partials/home.html'}).
         otherwise({redirectTo: '/'});
 });
 
